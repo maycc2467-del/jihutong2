@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集互通体验设计作品集</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 自定义简单样式 -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* 隐藏滚动条但允许滚动 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; 
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- 01. 封面 (Cover) -->
+    <section class="relative h-screen flex flex-col justify-center items-center bg-gradient-to-b from-[#FFF4EB] to-white px-6">
+        <div class="absolute top-10 left-10 flex items-center gap-2">
+            <div class="w-8 h-8 rounded bg-orange-500 flex items-center justify-center text-white font-bold">集</div>
+            <span class="font-bold text-xl tracking-wider text-gray-800">集互通</span>
+        </div>
+        
+        <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
+                B端电商管理平台 <br/> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">体验重塑与效率进化</span>
+            </h1>
+            <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                基于“业务赋能”与“体验度量”的双驱模型，重新定义商家后台的工作流。通过系统化的设计策略，提升核心链路操作效率，助力商家业务稳健增长。
+            </p>
+            <div class="flex justify-center gap-4 text-sm text-gray-400 mb-16">
+                <span class="flex items-center gap-1"><i data-lucide="target" class="w-4 h-4"></i> UX/UI Design</span>
+                <span class="flex items-center gap-1"><i data-lucide="layout" class="w-4 h-4"></i> Design System</span>
+                <span class="flex items-center gap-1"><i data-lucide="activity" class="w-4 h-4"></i> Data Visualization</span>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 animate-bounce text-orange-400">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </section>
+
+    <!-- 02. 项目背景与挑战 (Background) -->
+    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/3">
+                <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">01. Discover</h2>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6">业务背景与挑战</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    集互通是一款面向商家的综合电商管理平台，涵盖商品、客户、数据、客服等核心模块。随着业务体量的增长，旧版平台暴露出明显的体验瓶颈：操作流程冗长、信息架构模糊、数据价值未被充分挖掘，直接影响了商家的经营效率。
+                </p>
+            </div>
+            <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-orange-500 mb-4"><i data-lucide="box" class="w-6 h-6"></i></div>
+                    <h4 class="font-bold text-lg mb-2">商品上架慢，容错率低</h4>
+                    <p class="text-gray-500 text-sm">商家反馈商品发布流程复杂，信息填写繁琐，规格设置不够灵活，难以满足多样化商品的管理需求。</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-orange-500 mb-4"><i data-lucide="users" class="w-6 h-6"></i></div>
+                    <h4 class="font-bold text-lg mb-2">客资分散，跟进断层</h4>
+                    <p class="text-gray-500 text-sm">客户信息缺乏统一视图，客服接待时无法快速调取客户画像与历史订单，导致沟通成本高昂。</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-orange-500 mb-4"><i data-lucide="bar-chart-2" class="w-6 h-6"></i></div>
+                    <h4 class="font-bold text-lg mb-2">数据堆砌，决策困难</h4>
+                    <p class="text-gray-500 text-sm">报表展示不够直观，关键指标被淹没在海量数据中，商家难以快速获取洞察以指导后续运营。</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-orange-500 mb-4"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+                    <h4 class="font-bold text-lg mb-2">权限割裂，协同低效</h4>
+                    <p class="text-gray-500 text-sm">面对不同规模的商家团队，原有的权限管理颗粒度粗，分配逻辑不清晰，增加管理成本。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03. 典型用户画像 (Personas) -->
+    <section class="py-24 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="text-center mb-16">
+                    <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">02. Define</h2>
+                    <h3 class="text-3xl font-bold text-gray-900">洞见用户：寻找体验的破局点</h3>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">针对不同发展阶段的商家，我们需要提供差异化但同样高效的体验支撑。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Persona 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border-t-4 border-orange-400">
+                        <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 font-bold text-xl mb-6">01</div>
+                        <h4 class="text-xl font-bold mb-2">小型商家店主</h4>
+                        <p class="text-sm text-orange-500 font-medium mb-4 bg-orange-50 inline-block px-3 py-1 rounded-full">极致效率 / 低学习成本</p>
+                        <p class="text-gray-500 leading-relaxed text-sm">通常一人身兼多职（上架、客服、发货）。他们对操作便捷性要求极高，没有时间学习复杂系统，关注平台能否快速帮其促成交易。</p>
+                    </div>
+                    <!-- Persona 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border-t-4 border-orange-400">
+                        <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 font-bold text-xl mb-6">02</div>
+                        <h4 class="text-xl font-bold mb-2">中型商家运营</h4>
+                        <p class="text-sm text-orange-500 font-medium mb-4 bg-orange-50 inline-block px-3 py-1 rounded-full">精细化营销 / 数据驱动</p>
+                        <p class="text-gray-500 leading-relaxed text-sm">拥有明确的团队分工。需要精准的数据分析来制定营销策略，对客户分层管理、复盘报表有高频且深度的使用诉求。</p>
+                    </div>
+                    <!-- Persona 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border-t-4 border-orange-400">
+                        <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 font-bold text-xl mb-6">03</div>
+                        <h4 class="text-xl font-bold mb-2">大型商家主管</h4>
+                        <p class="text-sm text-orange-500 font-medium mb-4 bg-orange-50 inline-block px-3 py-1 rounded-full">全局掌控 / 安全协同</p>
+                        <p class="text-gray-500 leading-relaxed text-sm">不直接参与一线操作，更注重平台的稳定性、安全性、组织权限分配以及宏观业务数据的整合分析能力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04. 策略推导 (Strategy) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">03. Strategy</h2>
+                <h3 class="text-3xl font-bold text-gray-900">目标推导与体验策略</h3>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">将业务诉求转化为可度量的设计目标，并制定全局指导策略。</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-16">
+                <div class="bg-gray-900 text-white p-6 rounded-xl w-full md:w-64 text-center">
+                    <h4 class="text-orange-400 font-bold mb-2">业务目标</h4>
+                    <p class="text-sm text-gray-300">缩短核心操作平均耗时<br/>提升数据功能使用频率</p>
+                </div>
+                <i data-lucide="arrow-right" class="hidden md:block text-gray-300 w-8 h-8"></i>
+                <div class="bg-orange-500 text-white p-6 rounded-xl w-full md:w-64 text-center transform scale-105 shadow-xl">
+                    <h4 class="text-white font-bold mb-2">设计目标</h4>
+                    <p class="text-sm text-orange-100">降低操作错误率<br/>提升界面美观与满意度<br/>增强数据可视化易读性</p>
+                </div>
+                <i data-lucide="arrow-right" class="hidden md:block text-gray-300 w-8 h-8"></i>
+                <div class="bg-gray-100 text-gray-800 p-6 rounded-xl w-full md:w-64 text-center border border-gray-200">
+                    <h4 class="text-gray-900 font-bold mb-2">体验策略</h4>
+                    <p class="text-sm text-gray-500">工作流重组与降噪<br/>构建一致性设计系统<br/>场景化数据透视</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05. 设计规范 (Design System) -->
+    <section class="py-24 bg-[#1A1C20] text-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="mb-16">
+                    <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">04. Design System</h2>
+                    <h3 class="text-3xl font-bold text-white">构建理性与温度并存的规范</h3>
+                    <p class="text-gray-400 mt-4 max-w-2xl">B端设计不仅需要严谨的逻辑，也需要在高频操作中注入品牌温度。我们以“暖橙”为核心，构建了一套克制而清晰的视觉语言。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div>
+                        <h4 class="text-xl mb-6 font-medium border-b border-gray-700 pb-2">色彩系统 Color System</h4>
+                        <div class="flex gap-4 mb-8">
+                            <div class="flex-1">
+                                <div class="h-24 bg-[#F28E2B] rounded-lg shadow-lg mb-2 flex items-end p-2"><span class="text-xs font-bold">Brand Primary</span></div>
+                                <p class="text-xs text-gray-400">#F28E2B</p>
+                            </div>
+                            <div class="flex-1">
+                                <div class="h-24 bg-[#1F2937] rounded-lg shadow-lg mb-2 flex items-end p-2"><span class="text-xs font-bold">Text Main</span></div>
+                                <p class="text-xs text-gray-400">#1F2937</p>
+                            </div>
+                            <div class="flex-1">
+                                <div class="h-24 bg-[#F9FAFB] border border-gray-700 rounded-lg shadow-lg mb-2 flex items-end p-2"><span class="text-xs text-gray-800 font-bold">Bg Base</span></div>
+                                <p class="text-xs text-gray-400">#F9FAFB</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            摒弃了传统B端冷峻的蓝色系，采用暖橙色作为主色调，传递“服务、热情、活力”的平台属性。在辅色和背景色上保持极致的克制（大面积白与灰），确保数据内容的主体地位不受干扰。
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl mb-6 font-medium border-b border-gray-700 pb-2">栅格与布局 Grid & Layout</h4>
+                        <div class="bg-gray-800 rounded-lg p-6 mb-4 flex gap-2 h-24">
+                            <!-- 模拟栅格 -->
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                            <div class="flex-1 bg-gray-700/50 rounded flex items-center justify-center opacity-50"></div>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            全面采用响应式 24 栅格系统（示意缩略为12），水槽设定为 16px/24px。卡片采用 8px 圆角（适中的亲和力），内边距遵循 4 的倍数规律（16/24/32px），保证信息的呼吸感与阅读的流畅性。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- 深度案例剖析 (Case Studies) --- -->
+    
+    <!-- 06. 核心模块 1：数据驾驶舱 (Dashboard) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="mb-12">
+                <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">05. Core Experience 1</h2>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">全局驾驶舱：从“看数据”到“用数据”</h3>
+                <p class="text-gray-500 max-w-3xl leading-relaxed">
+                    原版首页信息平铺直叙。新版设计引入了“层级渐进”与“场景聚焦”理念。首屏最高优先级展示核心指标（北极星指标）与高频待办，利用 F 型视觉动线引导商家快速掌握当日经营盘面。
+                </p>
+            </div>
+            
+            <div class="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] mb-12 border border-gray-100 bg-gray-100 flex items-center justify-center min-h-[500px] relative">
+                <img src="./Frame 1321318918.png" alt="首页设计图" class="w-full h-auto object-cover" />
+                <!-- 注解标签 -->
+                <div class="absolute top-[10%] left-[5%] bg-white/90 backdrop-blur p-3 rounded-lg shadow-lg max-w-xs border-l-4 border-orange-500 text-sm">
+                    <strong>F型动线布局</strong><br/>顶部数据概览 → 中部待办事项 → 底部图表分析，符合人眼自然扫描习惯。
+                </div>
+                <div class="absolute top-[35%] right-[25%] bg-white/90 backdrop-blur p-3 rounded-lg shadow-lg max-w-xs border-l-4 border-orange-500 text-sm">
+                    <strong>卡片式封装</strong><br/>高内聚低耦合，不同业务模块通过卡片隔离，减少视觉噪音。
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2"><i data-lucide="check-circle-2" class="text-orange-500 w-4 h-4"></i> 数据降噪与层级</h4>
+                    <p class="text-gray-500">提取“今日总览”、“待办事项”置于第一屏绝对核心区。通过大小对比、色彩对比，让商家第一眼就能抓住“今天赚了多少”、“有什么急需处理”。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2"><i data-lucide="check-circle-2" class="text-orange-500 w-4 h-4"></i> 快捷入口的场景化</h4>
+                    <p class="text-gray-500">摒弃了冗长的左侧边栏寻找过程，在首页中部提供高频操作的“便捷入口”（如商品发布、订单查询），并支持用户自定义，真正实现“千人千面”的效率提速。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2"><i data-lucide="check-circle-2" class="text-orange-500 w-4 h-4"></i> 右侧赋能区</h4>
+                    <p class="text-gray-500">右侧区域不放置主业务流，而是作为“赋能区”：店铺基础信息、系统公告以及“专属客服助手”，提供陪伴式服务体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07. 核心模块 1.1：报表可视化 (Data Viz) -->
+    <section class="py-24 bg-orange-50/50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out" style="transition-delay: 100ms;">
+                <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+                    <div class="md:w-1/2">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">报表分析：让数据趋势“说话”</h3>
+                            <p class="text-gray-500 leading-relaxed mb-6">
+                                在深度数据分析（如“我的报表”）场景中，设计的核心是**可视化的直观度**。我们避免了干瘪的表格罗列，大量运用微交互图表。
+                            </p>
+                            <ul class="space-y-4 text-sm text-gray-600">
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-6 h-6 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center flex-shrink-0">1</div>
+                                    <p><strong>业务监控仪表盘：</strong> 顶部采用渐变暖色卡片包围，利用双环形进度条直观展示“业绩完成度”与“时间进度”的对比，产生视觉推力。</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-6 h-6 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center flex-shrink-0">2</div>
+                                    <p><strong>时段访问平滑曲线：</strong> 放弃生硬的折线，采用贝塞尔平滑曲线展示流量趋势，配合悬浮态的数据点透出，既美观又专业。图例交互支持动态显示/隐藏特定维度。</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 w-6 h-6 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center flex-shrink-0">3</div>
+                                    <p><strong>关键指标异动提示：</strong> 转化率、退款件数等核心指标附带“较昨日”的红绿升降标识，利用颜色阈值快速拉响业务警报。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(242,142,43,0.15)] border border-orange-100 relative">
+                            <img src="./02-首页-我的报表2.jpg" alt="报表设计图" class="w-full h-auto" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 08. 核心模块 2：商品发布 (Form & Stepper) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">06. Core Experience 2</h2>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">商品发布：化繁为简的向导式体验</h3>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    传统的商品上架表单往往是一个“无底洞”般的长页面，极易引起用户的认知疲劳和操作中止。我们采用了“任务拆解”的逻辑重塑此流程。
+                </p>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white mb-12 relative">
+                <img src="./Frame 1321318920.png" alt="商品发布设计图" class="w-full h-auto" />
+                <!-- 注解 -->
+                <div class="hidden md:block absolute top-[8%] left-[25%] right-[25%] h-12 border-2 border-dashed border-orange-500 rounded animate-pulse"></div>
+                <div class="hidden md:block absolute top-[18%] left-[30%] bg-orange-500 text-white text-xs px-2 py-1 rounded shadow">向导式进度条 (Stepper)，清晰预期</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-xl font-bold mb-4 border-l-4 border-orange-500 pl-3">认知减负：向导分步设计</h4>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        将多达数十项的表单字段，根据逻辑关联拆解为 3 个清晰的步骤：“选择分类 → 基本信息 → 发布成功”。顶部的分步指示器（Stepper）始终可见，给予用户明确的位置感和任务预期，有效降低了由于页面过长导致的流失率。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4 border-l-4 border-orange-500 pl-3">交互优化：多媒体与长表单处理</h4>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        商品主图上传区域采用大面积的拖拽热区，支持批量操作；导购标题等字段提供“标签库”快速插入功能，变“打字输入”为“点击选择”。必填项红星标记清晰，底部固定操作栏（保存草稿/下一步）确保随时可触达，防止数据丢失。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09. 核心模块 3：客户管理 (CRM List) -->
+    <section class="py-24 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="mb-12">
+                    <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">07. Core Experience 3</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">客户管理：多维筛选与统一视图</h3>
+                    <p class="text-gray-500 max-w-3xl leading-relaxed">
+                        B端表格承载着最高频的数据处理任务。对于“客户概况”页，设计的关键在于“高效检索”与“清晰展示”的平衡。
+                    </p>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white mb-8">
+                    <img src="./Frame 1321318919.png" alt="客户管理设计图" class="w-full h-auto" />
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h4 class="font-bold text-lg mb-4">表格设计的巧思</h4>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex gap-2">
+                            <div class="text-orange-500 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                            <span><strong>复合筛选区：</strong> 顶部 Tab 预置了“普通/优质/潜在”等常用分层，降低高频筛选的操作步长。下拉框与搜索框组合，形成漏斗式条件检索，点击“查询”触发，避免频繁刷新干扰。</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <div class="text-orange-500 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                            <span><strong>信息降噪与对比：</strong> 表格去除了繁重的纵向分割线，利用斑马纹或简单的横线引导视线。状态字段（如：进行中、已完成、逾期）采用明确的色彩标识符（Dot），一目了然。</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <div class="text-orange-500 mt-1"><i data-lucide="check-circle-2" class="w-4 h-4"></i></div>
+                            <span><strong>批量操作收敛：</strong> 列表上方的操作栏（导出、批量编辑等）在未勾选数据时保持相对弱化，勾选后可通过悬浮或高亮形式引导，保持界面清爽。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. 核心模块 4：智能客服 (CS Chat) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="flex flex-col md:flex-row gap-16 items-start">
+                <div class="md:w-[40%] sticky top-24">
+                    <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">08. Core Experience 4</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">工作台视图：赋能一线的智能客服</h3>
+                    <p class="text-gray-500 leading-relaxed mb-6">
+                        客服接待是一个极度追求“时间效率”的场景。我们调研发现，客服经常需要在聊天窗口、订单系统、客户CRM之间来回切换，严重拖慢了响应速度（ART）。
+                    </p>
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg mb-6">
+                        <h5 class="font-bold text-gray-900 mb-1 text-sm">设计解法：三栏式沉浸式工作台</h5>
+                        <p class="text-xs text-gray-600">将会话列表、沟通视窗、客户画像面板整合在同一层级，实现“所见即所需”。</p>
+                    </div>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><strong>左侧（排队与列表）：</strong> 紧凑的会话列表，实时展示倒计时/未读数，利用视觉紧迫感督促响应。</li>
+                        <li><strong>中栏（沟通场域）：</strong> 极简的对话流设计，提供快捷回复、订单卡片发送等富文本工具，减少键盘敲击次数。</li>
+                        <li><strong>右侧（全息画像）：</strong> <span class="text-orange-500 font-bold">此次优化的核心亮点。</span> 自动关联当前用户的标签（如高价值、VIP）、基础备注、以及最近订单明细及物流状态。客服无需询问单号，即可主动掌握服务上下文，提供“懂你”的服务体验。</li>
+                    </ul>
+                </div>
+                <div class="md:w-[60%]">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 relative">
+                        <img src="./03-当前会话.png" alt="当前会话设计图" class="w-full h-auto" />
+                        <!-- 高亮右侧边栏 -->
+                        <div class="absolute top-0 right-0 bottom-0 w-[28%] bg-orange-500/10 border-l-2 border-orange-500 z-10 animate-pulse mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. 核心模块 5：权限管理 (Permissions) -->
+    <section class="py-24 bg-[#1F2937] text-gray-300 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="mb-16 text-center">
+                    <h2 class="text-sm font-bold text-orange-500 uppercase tracking-widest mb-2">09. Core Experience 5</h2>
+                    <h3 class="text-3xl font-bold text-white mb-4">复杂逻辑的优雅表达：账号权限</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        中大型商家对账号权限的管理颗粒度要求极高。面对庞大如树状图的权限节点，如果设计处理不当，极易造成页面混乱和配置错误。
+                    </p>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-2xl mb-12 border border-gray-700 bg-gray-800">
+                    <img src="./05-账号权限.png" alt="账号权限设计图" class="w-full h-auto opacity-90" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-orange-400 flex-shrink-0"><i data-lucide="layout" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-2">管理范围与功能解耦</h4>
+                            <p class="leading-relaxed">将权限分为宏观的“管理范围”（店铺、仓库、品牌维度）与微观的“功能权限”（具体能点哪些菜单）两大区域。顶部用表单定基调，下方用 Tab 切换不同类型的细分权限，逻辑层次分明。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-orange-400 flex-shrink-0"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-2">模块化复选逻辑</h4>
+                            <p class="leading-relaxed">在功能权限分配区，采用“模块分组 + 复选框”的形式。例如“基础档案”下一组，“商品策略”下一组。背景色的交替使用（浅灰斑马纹区块）有效隔绝了不同模块组，防止视觉串行。右上角提供“全选/反选”快捷操作，极大提升了主管的配置效率。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. 总结与反思 (Conclusion) -->
+    <section class="py-32 bg-white px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-8 text-orange-500">
+                    <i data-lucide="target" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-6">价值验证与未来展望</h2>
+                <p class="text-xl text-gray-500 mb-12 leading-relaxed">
+                    “好的 B 端设计，是在看不见的地方做减法，在看得见的地方做乘法。”
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50">
+                        <div class="text-3xl font-bold text-orange-500 mb-2">↓ 35%</div>
+                        <div class="text-sm font-bold text-gray-900 mb-2">核心操作耗时缩短</div>
+                        <p class="text-xs text-gray-500">通过向导式发布、统一客资视图，极大提升了一线人员操作效率。</p>
+                    </div>
+                    <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50">
+                        <div class="text-3xl font-bold text-orange-500 mb-2">↑ 60%</div>
+                        <div class="text-sm font-bold text-gray-900 mb-2">数据报表活跃度</div>
+                        <p class="text-xs text-gray-500">可视化的重构使数据真正变得可读、可用，帮助中层管理更好地复盘决策。</p>
+                    </div>
+                    <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50">
+                        <div class="text-3xl font-bold text-orange-500 mb-2">98%</div>
+                        <div class="text-sm font-bold text-gray-900 mb-2">设计规范覆盖率</div>
+                        <p class="text-xs text-gray-500">统一的组件库沉淀，不仅提升了品牌专业度，也为后续产品敏捷迭代铺平了道路。</p>
+                    </div>
+                </div>
+
+                <p class="text-gray-400 text-sm">
+                    感谢您的观看 / Thanks for scrolling
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 动画与图标初始化脚本 -->
+    <script>
+        // 初始化 Lucide 图标
+        lucide.createIcons();
+
+        // 监听滚动元素淡入效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 移除初始隐藏状态类，添加显示状态类
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        // 触发后停止观察该元素
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // 选择所有需要动画的元素并开始观察
+            const elements = document.querySelectorAll('.fade-in-section');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
